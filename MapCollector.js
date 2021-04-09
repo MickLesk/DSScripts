@@ -11,7 +11,7 @@ function fnRefresh() {
 $(document).ready(function() {
     if ($('#' + outputID).length <= 0) {
         if (window.game_data.screen == 'map') {
-            var srcHTML = '<div id="coord_picker" style="padding: 3px; z-index: 99999; position: absolute; top: 90px; width: auto; height: auto; background-color:#CEBC98; background-image: url(../graphic/index/bg-tile.jpg); border:2px solid; visibility: visible"><center><span style="color:blue;align:center;">Entfernen Sie die Koordinaten von der Karte.</span><br/><br/><center><input type="checkbox" id="cbBBEncode" onClick="isEncoded=this.checked;fnRefresh();"' + (isEncoded ? 'checked' : '') + '/>C\u00F3digos BB<br/><textarea id="' + outputID + '" cols="40" rows="10"resize="none" value="" onFocus="this.select();"/><br/><input type="button" class="btn" value="Fechar janela" onClick="window.location.reload()"></div>';
+            var srcHTML = '<div id="coord_picker" style="padding: 3px; z-index: 99999; position: absolute; top: 90px; width: auto; height: auto; background-color:#CEBC98; background-image: url(../graphic/index/bg-tile.jpg); border:2px solid; visibility: visible"><center><span style="color:blue;align:center;">Entfernen Sie die Koordinaten von der Karte.</span><br/><br/><center><input type="checkbox" id="cbBBEncode" onClick="isEncoded=this.checked;fnRefresh();"' + (isEncoded ? 'checked' : '') + '/>C\u00F3digos BB<br/><textarea id="' + outputID + '" cols="40" rows="10"resize="none" value="" onFocus="this.select();"/>'+'<br/><input type="button" class="btn" value="Fenster schließen" onClick="window.location.reload()"></div>';
             $('body').append($(srcHTML));
             $('#coord_picker').draggable();
             TWMap.map._handleClick = function(e) {
