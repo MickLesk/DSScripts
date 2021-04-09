@@ -1,14 +1,11 @@
-
 "use strict";
-
-
 ((cfg) => {
     if (typeof cfg !== 'object') {
         UI.InfoMessage('Ungültige Konfiguration!', 5000, 'error');
         return;
     }
     if (typeof TWMap !== 'object') {
-        UI.InfoMessage('Das Skript funktioniert nur auf Seiten, auf denen die Karte sichtbar ist', 5000, 'error');
+        UI.InfoMessage('Das Skript funktioniert nur auf Seiten, auf denen eine Karte sichtbar ist', 5000, 'error');
         return;
     }
 
