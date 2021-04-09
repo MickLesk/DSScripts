@@ -162,7 +162,7 @@ ScriptAPI.register( 'MapCanvas', true, '-Energy Shots', 'support-nur-im-forum@di
 
         if (!canvas)
         {
-            console.log("Canvas konnte nicht gefunden werden!");
+            console.log("Canvas konnte nicht geladen werden!");
             return;
         }
 
