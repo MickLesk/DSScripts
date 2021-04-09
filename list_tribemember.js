@@ -1,7 +1,3 @@
-//
-// author DNSTW (stivens)
-// Updated by grabie2 on 13.01.2021
-//
 (function() {
     let mode = game_data.mode;
     if (mode === null)
@@ -9,32 +5,32 @@
 
     if ((game_data.screen == 'ally' && mode == 'members')) {
         try {
-            $('table.vis:contains(Ranking globalny)').attr('id', 'ally_content');
+            $('table.vis:contains(Globaler Rang)').attr('id', 'ally_content');
         } catch {
             ;
         }
         var table = $('#ally_content');
-        var theader = $('table th:contains(Funkcje)').clone().text('Dodać?');
+        var theader = $('table th:contains(Features)').clone().text('Hinzufügen?');
     } else if (game_data.screen == 'info_ally') {
         try {
-            $('table.vis:contains(Ranking globalny)').attr('id', 'ally_content');
+            $('table.vis:contains(Globaler Rang)').attr('id', 'ally_content');
         } catch {
             ;
         }
         var table = $('#ally_content');
-        var theader = $('table th:contains(Nazwa)').clone().text('Dodać?');
+        var theader = $('table th:contains(Name)').clone().text('Hinzufügen?');
     } else if (game_data.screen == 'info_member') {
-        var table = $('th:contains(Ranking globalny)').parent().parent().parent();
-        var theader = $('table th:contains(Wioski)').clone().find('a').text('Dodać?');
+        var table = $('th:contains(Globaler Rang)').parent().parent().parent();
+        var theader = $('table th:contains(Dörfer)').clone().find('a').text('Hinzufügen?');
     } else {
-        UI.InfoMessage('Das Skript sollte mit der Stammesmitgliederübersicht verwendet werden.', 5000, 'error');
-        throw new Error('Skrypt przerwany.');
+        UI.InfoMessage('Das Skript sollte in der Stammesmitgliederübersicht verwendet werden.', 5000, 'error');
+        throw new Error('Skript-Fehler');
     }
     var popup_content = `<div style="text-align:center" id="mailing_popup">
-                        <input type="radio" name="type" value="mailing" checked> Lista mailingowa<br>
-                        <input type="radio" name="type" value="bbcode"> Lista z bbcode<br><br><br>
-                        <button type="button" class="btn" id="check_all_btn">Zaznacz wszystkich</button>
-                        <button type="button" class="btn" id="ready_btn">Stwórz listę</button><br><br><hr><br><br>
+                        <input type="radio" name="type" value="mailing" checked> Mailing-Liste<br>
+                        <input type="radio" name="type" value="bbcode"> BB-Code-Liste<br><br><br>
+                        <button type="button" class="btn" id="check_all_btn">Alle Auswählen</button>
+                        <button type="button" class="btn" id="ready_btn">Liste erstellen</button><br><br><hr><br><br>
                         <textarea id="list_textar" style="width: 90%" rows="7"></textarea>
                     </div>`;
 
@@ -75,7 +71,7 @@
         popup.show();
     };
     if ($('#mailing_popup').length === 0) {
-        createPopup('Tworzenie listy graczy', popup_content, {
+        createPopup('Spieler-Liste (Stamm)', popup_content, {
             width: 400
         });
         $('#ready_btn').on('click', function() {
