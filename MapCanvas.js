@@ -1,3 +1,4 @@
+ScriptAPI.register( 'MapCanvas', true, '-Energy Shots', 'support-nur-im-forum@die-staemme.de' );
 "use strict";
 ((cfg) => {
     if (typeof cfg !== 'object') {
