@@ -1,8 +1,7 @@
+var mapOverlay;
 var coords = [];
 var outputID = 'villageList';
 var isEncoded = true;
-var mapOverlay;
-var selectedVillages = [];
 if ('TWMap' in window) mapOverlay = TWMap;
 
 function fnRefresh() {
