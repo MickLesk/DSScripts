@@ -27,8 +27,10 @@ $(document).ready(function() {
                 return false;
             };
         } else {
-            var redirect = confirm('Sie befinden sich nicht auf der Kartenansicht.\n\n Zur Kartenansicht wechseln?');
-            if (redirect) window.self.location = window.game_data.link_base_pure.replace(/screen\=/i, 'screen=map');
+			UI.ErrorMessage(
+			`${('Dieses Script muss auf der Karte ausgeführt werden! <a href="/game.php?screen=map" class="btn">zur Karte</a>')}`,
+			4000
+			);
         }
     }
 });
